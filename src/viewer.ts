@@ -23,7 +23,7 @@ export function initViewer() {
       <button class="v-close" type="button">Close <span aria-hidden="true">Esc</span></button>
     </div>
     <div class="v-stage">
-      <div class="v-picture" data-stage><div class="ph v-fig"><img alt="" decoding="async"></div></div>
+      <div class="v-picture" data-stage><div class="ph v-fig"></div></div>
       <div class="plot plot-v" data-vplot></div>
     </div>
     <div class="v-bottom">
@@ -35,7 +35,10 @@ export function initViewer() {
   mountPlot(dlg.querySelector<HTMLElement>('[data-vplot]')!);
 
   const fig = dlg.querySelector<HTMLElement>('.v-fig')!;
-  const img = fig.querySelector('img')!;
+  const img = document.createElement('img');
+  img.alt = '';
+  img.decoding = 'async';
+  fig.prepend(img);
   const stage = dlg.querySelector<HTMLElement>('[data-stage]')!;
   const num = dlg.querySelector('[data-v-num]')!;
   const note = dlg.querySelector('[data-v-note]')!;

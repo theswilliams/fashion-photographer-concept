@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-30T22:13:31.853Z",
+        "reason": "agent: hierarchy is carried by weight and case in Schibsted Grotesk by design (DESIGN.md); detector reads HTML without CSS; reviewed in earlier audit"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "about.html"
+        ],
+        "createdAt": "2026-09-30T22:13:32.318Z",
+        "reason": "agent: hierarchy is carried by weight and case in Schibsted Grotesk by design (DESIGN.md); detector reads HTML without CSS; reviewed in earlier audit"
+      }
+    ]
+  }
+}
