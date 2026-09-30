@@ -25,4 +25,4 @@ FORM: Call sheet with lighting plot, candidate 7 of 7; seed key 7a6c4661.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
 
 ## Unresolved
-Fonts: confirm Schibsted Grotesk is installable via fontsource. Real photography must replace studies before any real use.
+Fonts: confirm Schibsted Grotesk is installable via fontsource. Real photography must replace the stock stand-ins before any real use.

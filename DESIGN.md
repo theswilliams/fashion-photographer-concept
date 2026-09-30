@@ -106,7 +106,7 @@ A near-monochrome cool sheet with a single fluorescent marker.
 
 ### Neutral
 - **Cool Paper** (`paper`): page, bar, plot and form sheet ground.
-- **Paper Shade** (`paper-2`): the recessed tone behind canvases while they load, the subject disc on the plot, error cells.
+- **Paper Shade** (`paper-2`): the recessed tone behind photographs while they load, the subject disc on the plot, error cells.
 - **Ink** (`ink`): text, all structural rules, registration crosses, the camera mark.
 - **Ink Soft** (`ink-2`): running body copy and blurbs.
 - **Ink Quiet** (`ink-3`): stamped field labels, plot axes, fine print. Darkest step that still reads as secondary; do not lighten it.
@@ -150,7 +150,7 @@ Flat. There are no drop shadows. Depth is overlap (the plot sits over the hero s
 
 ## Shapes
 
-Square. Every corner is 0px: buttons, chips, form cells, canvases, plot, handle (a 26px square with a 6px ink centre). Forms are ruled boxes. Recurring marks are drawn in CSS gradients: registration crosses (17px, offset -9px at two corners of a frame) and 1px fold ticks. Plates are cropped rectangles with fixed aspect ratios.
+Square. Every corner is 0px: buttons, chips, form cells, photographs, plot, handle (a 26px square with a 6px ink centre). Forms are ruled boxes. Recurring marks are drawn in CSS gradients: registration crosses (17px, offset -9px at two corners of a frame) and 1px fold ticks. Plates are cropped rectangles with fixed aspect ratios.
 
 ## Components
 
