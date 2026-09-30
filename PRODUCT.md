@@ -33,7 +33,7 @@ web
 Vite + vanilla TypeScript, multi-page static output (real separate HTML pages per series), no framework.
 
 ## Evidence on Hand
-No real photography, clients, publications, awards, testimonials or metrics exist. None may be fabricated or implied. The photographer, studio, series titles, clients and contact details are invented placeholders. There is no image generation on this machine (ffmpeg only), so all imagery is authored in code (SVG/canvas/procedural studies), labelled as concept imagery, and listed for replacement with real photographs.
+No real photography, clients, publications, awards, testimonials or metrics exist. None may be fabricated or implied. The photographer, studio, series titles, clients and contact details are invented placeholders. Imagery is licensed Unsplash stock photography standing in for the photographer's work, credited on the About page and in the README, to be replaced with original photography.
 
 ## Decisions Recorded
 - Concept (user choice): fashion photographer.

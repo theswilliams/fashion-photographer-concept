@@ -86,7 +86,7 @@ components:
 
 **Creative North Star: "The Call Sheet"**
 
-The interface is the paperwork of a shoot day: call times, slate numbers, a lighting plot, a shot log. It is a cool paper sheet ruled in ink, and the pictures are laid over it at frame scale. The pictures are code-authored WebGL studies of cloth (satin, pleat, tulle, rib, foil) that relight live when the key-light handle on the plot moves. They are labelled as concept imagery.
+The interface is the paperwork of a shoot day: call times, slate numbers, a lighting plot, a shot log. It is a cool paper sheet ruled in ink, and the pictures are laid over it at frame scale. The pictures are code-authored CSS light overlay on licensed stock photography. They are labelled as concept imagery.
 
 The system is severe and quiet. Structure comes from 1px ink rules, registration crosses, fold ticks and stamped uppercase field labels, never from cards, radii or shadows. Images set the layout by bleeding off the page edge, stepping across the 12-column grid and overlapping, so each of the five series blocks on the home page has its own composition. One highlighter colour is the only heat in the sheet.
 
@@ -170,7 +170,7 @@ A form is a ruled two-column sheet of cells. Fields are transparent with a 1px i
 Uppercase label-size links right-aligned in the 56px ruled bar. Hover and current page fill chartreuse. Under 820px a bordered "Menu" button opens a full-screen list of 36 to 56px weight-800 links, each ruled.
 
 ### Lighting Plot (signature)
-A 260px ruled panel (190px in the viewer, hidden on phones) with a top-down diagram: rings, dashed axes, subject disc, camera mark, dashed beam and a draggable square chartreuse key-light handle; a three-column readout of angle and values sits below. Dragging relights the canvas studies live. It appears in the hero, every series head and the fullscreen viewer.
+A 260px ruled panel (190px in the viewer, hidden on phones) with a top-down diagram: rings, dashed axes, subject disc, camera mark, dashed beam and a draggable square chartreuse key-light handle; a three-column readout of angle and values sits below. Dragging relights the photographs live. It appears in the hero, every series head and the fullscreen viewer.
 
 ### Field Block (call-sheet data)
 A `dl` with a 1px ink top rule, rows separated by hairlines, label column 6 to 7.5rem in `ink-3` caps and value in 0.9375rem. Used for Production/Call/Location and each series' call, location and garments.
@@ -187,7 +187,7 @@ A native `dialog` on paper with a ruled top bar (big frame number, title, close)
 - **Do** keep all corners at 0px and all surfaces shadow-free.
 - **Do** rank by weight and case in Schibsted Grotesk; use `tabular-nums` only where figures align.
 - **Do** vary each new image block's composition (bleed, step, overlap) rather than repeating one row.
-- **Do** label generated imagery as concept imagery and keep canvas studies relit by the plot.
+- **Do** label the stock photographs as stand-ins, credit them, and keep them relit by the plot.
 - **Do** keep the focus halo: 3px ink outline, 2px offset, plus a 6px chartreuse ring.
 
 ### Don't:

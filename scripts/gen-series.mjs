@@ -7,6 +7,13 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const { series } = JSON.parse(readFileSync(resolve(root, 'src/series.json'), 'utf8'));
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const photos = JSON.parse(readFileSync(resolve(root, 'src/photos.json'), 'utf8'));
+// One responsive photo: srcset of the three WebP sizes, cropped with object-position, relit by the .ph overlay.
+const pic = (id, pos, depth, sizes, label = true) => {
+  const p = photos[id];
+  const b = `${depth}img/${id}`;
+  return `<img src="${b}-1100.webp" srcset="${b}-600.webp 600w, ${b}-1100.webp 1100w, ${b}-1800.webp 1800w" sizes="${sizes}" width="${p.w}" height="${p.h}" alt="${label ? esc(p.alt) : ''}" style="--pos:${pos}" loading="lazy" decoding="async">`;
+};
 const pad = (n) => String(n).padStart(2, '0');
 
 const head = (title, desc, depth) => `<!doctype html>
@@ -30,7 +37,7 @@ series.forEach((s, si) => {
       const num = `${s.n}.${pad(i + 1)}`;
       return `      <figure class="frame l-${f.l}" data-count-text="Frame ${num} / ${s.n}.${pad(count)}">
         <button class="frame-open" type="button" data-open="${i}" aria-label="Open frame ${num} full size: ${esc(s.alt)}, ${esc(f.note.toLowerCase())}">
-          <span class="plate"><canvas class="study" data-series="${si}" data-i="${i}" aria-hidden="true"></canvas></span>
+          <span class="plate ph">${pic(f.img, f.pos, '../../', '(max-width: 820px) 100vw, 60vw', false)}</span>
         </button>
         <figcaption><b>${num}</b><span>${esc(f.note)}</span></figcaption>
       </figure>`;
@@ -55,7 +62,7 @@ series.forEach((s, si) => {
       <div><dt>Garments</dt><dd>${esc(s.garments)}</dd></div>
       <div><dt>Light</dt><dd>${esc(s.lightNote)}</dd></div>
       <div><dt>Frames</dt><dd>${count}</dd></div>
-      <div><dt>Status</dt><dd>Concept study</dd></div>
+      <div><dt>Status</dt><dd>Stock stand-in</dd></div>
     </dl>
     <div class="plot plot-s" data-plot></div>
   </header>
@@ -78,7 +85,7 @@ ${frames}
 ${log}
       </tbody>
     </table>
-    <p class="s-fine">Concept imagery. These frames are drawn in code and relit live; the log is invented. Real photography replaces them in production.</p>
+    <p class="s-fine">Concept site. The pictures are licensed stock photographs standing in for the fictional photographer's work, relit live by the plot; credits are on the About page. The log is invented.</p>
   </section>
 
   <nav class="s-next" aria-label="Series">
@@ -99,12 +106,13 @@ ${log}
 const sched = series
   .map((s, si) => {
     const second =
-      s.slug === 'veil'
-        ? `\n        <span class="b-img2"><canvas class="study" data-series="${si}" data-i="3" aria-hidden="true"></canvas></span>`
+      s.cover2
+        ? `
+        <span class="b-img2 ph">${pic(s.cover2.img, s.cover2.pos, '', '30vw', false)}</span>`
         : '';
     return `    <article class="blk blk-${si + 1}" data-count-text="Series ${s.n} / ${pad(series.length)}">
       <a class="blk-link" href="series/${s.slug}/index.html">
-        <span class="b-img"><canvas class="study" data-series="${si}" data-i="0" role="img" aria-label="Concept study: ${esc(s.alt)}, relit by the key-light control"></canvas></span>${second}
+        <span class="b-img ph">${pic(s.cover.img, s.cover.pos, '', '(max-width: 820px) 100vw, 55vw')}</span>${second}
         <span class="b-info">
           <span class="b-num" aria-hidden="true">${s.n}</span>
           <h3 class="b-title">${esc(s.title)}</h3>
@@ -125,4 +133,12 @@ const idx = resolve(root, 'index.html');
 const src = readFileSync(idx, 'utf8');
 const out = src.replace(/<!--gen:schedule-->[\s\S]*?<!--\/gen:schedule-->/, `<!--gen:schedule-->\n${sched}\n    <!--/gen:schedule-->`);
 writeFileSync(idx, out);
+// Photo credits on the About page
+const used = [...new Set([...series.flatMap((s) => [s.cover.img, s.cover2?.img, ...s.frames.map((f) => f.img)]), 'metallic', 'face'].filter(Boolean))];
+const credits = used
+  .map((id) => `      <li><a href="${photos[id].page}" rel="noopener">${esc(photos[id].by)}</a> <span>${esc(photos[id].alt)}</span></li>`)
+  .join('\n');
+const ab = resolve(root, 'about.html');
+const block = `<!--gen:credits-->\n${credits}\n      <!--/gen:credits-->`;
+writeFileSync(ab, readFileSync(ab, 'utf8').replace(/<!--gen:credits-->[\s\S]*?<!--\/gen:credits-->/, block));
 console.log(`generated ${series.length} series pages`);

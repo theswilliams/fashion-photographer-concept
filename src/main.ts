@@ -1,10 +1,9 @@
 import '@fontsource-variable/schibsted-grotesk';
 import './style.css';
-import { initStudies } from './studies';
 import { mountPlot } from './plot';
 import { initViewer } from './viewer';
 import { initBook } from './book';
-import { getLight, setLight } from './light';
+import { getLight, onLight, setLight } from './light';
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -76,7 +75,16 @@ if (counter) {
   }
 }
 
-initStudies();
+// The plot drives the photographs: light position and strength go to CSS custom properties on <html>.
+const root = document.documentElement;
+const applyLight = (l: { x: number; y: number }) => {
+  const r = Math.min(1, Math.hypot(l.x, l.y));
+  root.style.setProperty('--lx', l.x.toFixed(3));
+  root.style.setProperty('--ly', l.y.toFixed(3));
+  root.style.setProperty('--lk', (0.55 - 0.2 * r).toFixed(3));
+};
+applyLight(getLight());
+onLight((l) => applyLight(l));
 document.querySelectorAll<HTMLElement>('[data-plot]').forEach((p) => mountPlot(p));
 initViewer();
 initBook();

@@ -38,12 +38,6 @@ export function onLight(fn: Sub) {
   return () => subs.delete(fn);
 }
 
-/** Shader light position: x right, y down, z toward the camera, in plate units. */
-export function lightPos(l: Light): [number, number, number] {
-  const r = Math.min(1, Math.hypot(l.x, l.y));
-  return [l.x * 1.4, l.y * 1.4, 0.3 + 0.5 * (1 - r)];
-}
-
 export function readout(l: Light) {
   const r = Math.min(1, Math.hypot(l.x, l.y));
   const az = (Math.round((Math.atan2(l.x, -l.y) * 180) / Math.PI) + 360) % 360;

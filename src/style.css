@@ -98,9 +98,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .reg::before { left: -9px; top: -9px; }
 .reg::after { right: -9px; bottom: -9px; }
 
-/* ---------- Canvases (concept imagery) ---------- */
-canvas.study { width: 100%; height: 100%; background: var(--paper-2); }
-.no-gl canvas.study { background-color: var(--ink-3); }
+/* ---------- Photographs, relit by the plot ---------- */
+/* The key light is two custom properties (--lx, --ly, --lk) set on <html> by the plot.
+   A radial gradient follows it and is blended over the photo, so every picture answers the same light. */
+.ph { display: block; position: relative; overflow: hidden; background: var(--paper-2); }
+.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); }
+.ph::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay;
+  background: radial-gradient(circle at calc(50% + var(--lx, -.55) * 50%) calc(50% + var(--ly, -.45) * 50%), #d8d8d8 0, #808080 50%, #303030 135%);
+  opacity: var(--lk, .4);
+}
 
 /* ---------- Lighting plot ---------- */
 .plot { width: 100%; max-width: 260px; background: var(--paper); border: var(--rule); position: relative; }
@@ -145,7 +152,7 @@ canvas.study { width: 100%; height: 100%; background: var(--paper-2); }
 }
 .hero-lede { max-width: 34ch; color: var(--ink-2); margin-bottom: 24px; }
 .hero-study { position: relative; border-left: var(--rule); min-height: 420px; }
-.hero-study canvas { position: absolute; inset: 0; }
+.hero-study .ph { position: absolute; inset: 0; }
 .hero-plot { position: absolute; left: 38%; bottom: var(--gutter); transform: translateX(-50%); z-index: 3; }
 .hero-plot .plot { box-shadow: none; }
 .hero-tag { position: absolute; right: var(--gutter); bottom: 12px; z-index: 3; background: var(--paper); padding: 6px 10px; border: var(--rule); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -160,7 +167,6 @@ canvas.study { width: 100%; height: 100%; background: var(--paper-2); }
 .blk-link:hover .b-title { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
 .blk-link:hover .mark { background: var(--ink); color: var(--paper); }
 .b-img { display: block; position: relative; }
-.b-img canvas { aspect-ratio: inherit; height: 100%; }
 .b-info { display: block; }
 .b-num { display: block; font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; line-height: 0.85; letter-spacing: -0.04em; margin-bottom: 18px; }
 .b-title { font-size: 1.75rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
@@ -179,7 +185,6 @@ canvas.study { width: 100%; height: 100%; background: var(--paper-2); }
 .blk-2 .b-info .b-num { font-size: clamp(3.5rem, 6vw, 6rem); }
 .blk-3 .b-img { grid-column: 3 / 9; grid-row: 1; aspect-ratio: 4 / 5; }
 .blk-3 .b-img2 { grid-column: 7 / 12; grid-row: 1; aspect-ratio: 1; align-self: start; margin-top: 18%; position: relative; z-index: 2; outline: 12px solid var(--paper); }
-.blk-3 .b-img2 canvas { height: 100%; }
 .blk-3 .b-info { grid-column: 1 / 3; grid-row: 1; padding-left: var(--gutter); align-self: start; }
 .blk-3 .b-info .b-blurb, .blk-3 .b-info .b-fields { display: none; }
 .blk-3 .b-num { font-size: clamp(3rem, 5vw, 5rem); }
@@ -224,7 +229,6 @@ canvas.study { width: 100%; height: 100%; background: var(--paper-2); }
 .frame-open { display: block; width: 100%; padding: 0; border: 0; background: none; text-align: left; }
 .frame-open:hover .plate { outline: 3px solid var(--hi); outline-offset: 0; }
 .plate { display: block; position: relative; width: 100%; }
-.plate canvas { position: absolute; inset: 0; }
 figcaption { display: flex; gap: 14px; padding-top: 8px; align-items: baseline; }
 figcaption b { font-weight: 800; }
 figcaption span { font-size: 0.875rem; color: var(--ink-2); }
@@ -264,7 +268,7 @@ figcaption span { font-size: 0.875rem; color: var(--ink-2); }
 .v-close span { color: var(--ink-3); margin-left: 6px; }
 .v-stage { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--gutter); align-items: end; padding: var(--gutter); min-height: 0; overflow: hidden; }
 .v-picture { display: grid; place-items: center; align-self: stretch; min-width: 0; min-height: 0; }
-.v-canvas { background: var(--paper-2); }
+.v-fig { flex: none; }
 .v-bottom { display: flex; justify-content: space-between; align-items: center; padding: 12px var(--gutter); border-top: var(--rule); gap: 16px; }
 .plot-v { max-width: 190px; }
 .plot-v .plot-pad { margin: 6px; }
@@ -278,7 +282,11 @@ figcaption span { font-size: 0.875rem; color: var(--ink-2); }
 .about-copy p { max-width: 46ch; color: var(--ink-2); }
 .about-copy p + p { margin-top: 1em; }
 .about-study { position: relative; border-left: var(--rule); min-height: 420px; }
-.about-study canvas { position: absolute; inset: 0; }
+.about-study .ph { position: absolute; inset: 0; }
+.credit-list { list-style: none; margin: 16px 0 0; padding: 0; columns: 3 260px; column-gap: var(--gutter); font-size: .8rem; }
+.credit-list li { break-inside: avoid; padding: 6px 0; border-top: var(--rule); }
+.credit-list a { font-weight: 600; margin-right: 6px; }
+.credit-list span { color: var(--ink-3); }
 .rules { list-style: none; margin: 0; padding: 0; border-bottom: var(--rule); }
 .rules li { display: grid; grid-template-columns: 38fr 62fr; gap: var(--gutter); padding: clamp(20px, 3vw, 40px) var(--gutter); border-bottom: var(--rule); }
 .rules li:last-child { border-bottom: 0; }

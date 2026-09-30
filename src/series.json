@@ -1,84 +1,82 @@
 {
   "series": [
     {
-      "n": "01", "slug": "bias", "title": "Bias", "mode": 0,
-      "base": [0.42, 0.05, 0.10], "spec": 1.1, "shin": 70, "relief": 0.9, "scale": 1.0,
-      "call": "06:40", "place": "Studio A, north window", "garments": "Bias-cut satin, evening",
+      "n": "01", "slug": "oxblood", "title": "Oxblood", "cover": { "img": "maroon", "pos": "50% 40%" },
+      "call": "06:40", "place": "Studio A, north window", "garments": "Tulle and gloss, evening",
       "lightNote": "One key, one flag, no fill",
-      "blurb": "Satin cut on the bias, dropped from a rail and left to fall. The garment is a line of light that changes every time the key moves.",
-      "brief": "Evening wear for a fictional autumn collection. The brief was a single instruction: show the fall of the cloth, not the dress. One hard key from camera left, a black flag to cut the spill, no fill. Every frame is a different place on the same length of satin.",
-      "alt": "bias-cut satin in deep oxblood",
+      "blurb": "Red in four weights: tulle, gloss, cotton and sky. One hard key and a black flag decide where each one burns and where it goes out.",
+      "brief": "Evening wear for a fictional autumn collection. The only colour allowed was red, and the only rule was a single hard key from camera left with a black flag to cut the spill. Every frame asks the same question of a different fabric: what does red do when the light is this hard.",
+      "alt": "red evening wear under a single hard key light",
       "frames": [
-        { "l": "wide",   "ox": 0.0, "oy": 0.0, "rot": 0.10, "z": 1.0, "t": "06:52", "lens": "85 mm", "note": "Rail drop, first fall" },
-        { "l": "small",  "ox": 2.1, "oy": 1.3, "rot": 0.55, "z": 0.6, "t": "07:05", "lens": "100 mm", "note": "Hem, close" },
-        { "l": "tall",   "ox": -1.4, "oy": 2.2, "rot": -0.2, "z": 1.1, "t": "07:31", "lens": "85 mm", "note": "Full length, flag in" },
-        { "l": "strip",  "ox": 3.3, "oy": -0.6, "rot": 1.2, "z": 0.8, "t": "07:58", "lens": "135 mm", "note": "Compressed, horizontal" },
-        { "l": "half-a", "ox": -2.8, "oy": 0.9, "rot": 0.0, "z": 1.3, "t": "08:10", "lens": "85 mm", "note": "Seam, raking" },
-        { "l": "half-b", "ox": 4.6, "oy": 3.2, "rot": 0.3, "z": 0.9, "t": "08:22", "lens": "85 mm", "note": "Seam, opposite" }
+        { "l": "wide",   "img": "redsky",   "pos": "50% 50%", "t": "06:52", "lens": "24 mm", "note": "Low angle, open sky" },
+        { "l": "small",  "img": "reddress", "pos": "50% 22%", "t": "07:05", "lens": "100 mm", "note": "Collar, close" },
+        { "l": "tall",   "img": "maroon",   "pos": "50% 50%", "t": "07:31", "lens": "85 mm", "note": "Tulle in motion" },
+        { "l": "strip",  "img": "redwall",  "pos": "50% 38%", "t": "07:58", "lens": "50 mm", "note": "Wall and shadow, cropped" },
+        { "l": "half-a", "img": "reddress", "pos": "50% 50%", "t": "08:10", "lens": "85 mm", "note": "Gloss, hard shadow" },
+        { "l": "half-b", "img": "redwall",  "pos": "50% 50%", "t": "08:22", "lens": "50 mm", "note": "Full length, red wall" }
       ]
     },
     {
-      "n": "02", "slug": "pleat-study", "title": "Pleat Study", "mode": 1,
-      "base": [0.82, 0.78, 0.70], "spec": 0.35, "shin": 24, "relief": 0.42, "scale": 1.0,
-      "call": "08:15", "place": "Studio A, cyclorama", "garments": "Accordion pleat, daywear",
+      "n": "02", "slug": "bone", "title": "Bone", "cover": { "img": "offshoulder", "pos": "50% 55%" },
+      "call": "08:15", "place": "Studio A, cyclorama", "garments": "Tailoring and satin, daywear",
       "lightNote": "Key from the side, raking",
-      "blurb": "Accordion pleats in bone, lit from the side until every fold is a separate plane. The picture is a ruler for the light.",
-      "brief": "A daywear line built from one pleat. The light has to be low and from the side, or the garment reads as a flat stripe. These frames step the key around the set so the same pleat turns from bright to black.",
-      "alt": "accordion-pleated cloth in bone white",
+      "blurb": "Everything pale: white floor, white wall, grey satin. The light has to be low and from the side or the garments vanish into the set.",
+      "brief": "A daywear line in off-whites and greys. On a white set the garment disappears unless the light rakes across it, so these frames step the key around the set until the tailoring reads as a shape again.",
+      "alt": "pale daywear on a white studio set",
       "frames": [
-        { "l": "tall",   "ox": 0.0, "oy": 0.0, "rot": 0.0, "z": 1.0, "t": "08:27", "lens": "70 mm", "note": "Straight pleat, key left" },
-        { "l": "wide",   "ox": 1.7, "oy": 1.0, "rot": 0.35, "z": 1.2, "t": "08:50", "lens": "85 mm", "note": "Pleat in motion, fan" },
-        { "l": "half-a", "ox": -2.2, "oy": 0.6, "rot": -0.4, "z": 0.8, "t": "09:12", "lens": "70 mm", "note": "Flare, low key" },
-        { "l": "half-b", "ox": 3.8, "oy": 2.4, "rot": 0.9, "z": 0.9, "t": "09:20", "lens": "70 mm", "note": "Flare, turned" },
-        { "l": "full",   "ox": -5.0, "oy": 0.2, "rot": 1.57, "z": 0.7, "t": "09:48", "lens": "50 mm", "note": "Panorama, pleat on its side" }
+        { "l": "tall",   "img": "whitefloor", "pos": "50% 50%", "t": "08:27", "lens": "70 mm", "note": "Floor work, black and white" },
+        { "l": "wide",   "img": "offshoulder", "pos": "50% 50%", "t": "08:44", "lens": "50 mm", "note": "Tiered skirt, panelled wall" },
+        { "l": "small",  "img": "gray1",      "pos": "50% 30%", "t": "09:02", "lens": "100 mm", "note": "Shoulder line, close" },
+        { "l": "half-a", "img": "twowomen",   "pos": "50% 50%", "t": "09:20", "lens": "85 mm", "note": "Two jackets, one light" },
+        { "l": "half-b", "img": "gray2",      "pos": "50% 50%", "t": "09:41", "lens": "85 mm", "note": "Fold against satin" },
+        { "l": "strip",  "img": "ottoman",    "pos": "50% 62%", "t": "10:03", "lens": "50 mm", "note": "Seated, cropped" }
       ]
     },
     {
-      "n": "03", "slug": "veil", "title": "Veil", "mode": 2,
-      "base": [0.06, 0.06, 0.08], "spec": 0.5, "shin": 30, "relief": 0.8, "scale": 1.0,
-      "call": "10:30", "place": "Studio B, blacked out", "garments": "Tulle, black on black",
-      "lightNote": "Backlit through the weave",
-      "blurb": "Black tulle on black, lit through the weave. The mesh is only visible where the light finds it, so the light is the subject.",
-      "brief": "Tulle in a blacked-out room. Nothing is visible until the key catches the mesh, and then it is nearly all you see. Shot against black with a single strip light, then relit in the edit.",
-      "alt": "black tulle mesh catching light against black",
+      "n": "03", "slug": "black", "title": "Black", "cover": { "img": "feather", "pos": "50% 50%" }, "cover2": { "img": "face", "pos": "50% 30%" },
+      "call": "10:30", "place": "Studio B, blacked out", "garments": "Feather, knit and wool, black on black",
+      "lightNote": "Backlit, the edge only",
+      "blurb": "Black on grey, black on white, black on black. The garment only exists where the light finds an edge, so the light is the subject.",
+      "brief": "Black clothing is photographed by what surrounds it. A pale ground gives a silhouette, a grey one gives texture, and a black one gives only the rim of light on feather, sleeve or hair. Five setups, one colour.",
+      "alt": "black clothing against pale and dark grounds",
       "frames": [
-        { "l": "full",   "ox": 0.0, "oy": 0.0, "rot": 0.2, "z": 1.0, "t": "10:44", "lens": "100 mm", "note": "Open veil, strip light" },
-        { "l": "small",  "ox": 2.4, "oy": 1.8, "rot": 0.9, "z": 0.7, "t": "11:03", "lens": "100 mm", "note": "Weave, close" },
-        { "l": "tall",   "ox": -1.8, "oy": 3.0, "rot": -0.3, "z": 1.0, "t": "11:25", "lens": "85 mm", "note": "Layered, moire" },
-        { "l": "wide",   "ox": 3.9, "oy": -1.1, "rot": 0.45, "z": 1.3, "t": "11:40", "lens": "85 mm", "note": "Fold catching" },
-        { "l": "strip",  "ox": -4.2, "oy": 1.4, "rot": 1.1, "z": 0.8, "t": "12:10", "lens": "135 mm", "note": "Horizon of tulle" },
-        { "l": "small",  "ox": 5.5, "oy": 4.0, "rot": 0.0, "z": 0.6, "t": "12:22", "lens": "100 mm", "note": "Last frame of the morning" }
+        { "l": "wide",   "img": "blacktop",   "pos": "50% 45%", "t": "10:42", "lens": "85 mm", "note": "Sculpted sleeve, arms closed" },
+        { "l": "small",  "img": "face",       "pos": "50% 30%", "t": "11:05", "lens": "135 mm", "note": "Hair in the wind machine" },
+        { "l": "tall",   "img": "feather",    "pos": "50% 50%", "t": "11:30", "lens": "70 mm", "note": "Feather against white" },
+        { "l": "half-a", "img": "blackpants", "pos": "50% 50%", "t": "11:58", "lens": "50 mm", "note": "Wide trouser, long line" },
+        { "l": "half-b", "img": "leotard",    "pos": "50% 50%", "t": "12:20", "lens": "85 mm", "note": "Sheer and solid" },
+        { "l": "strip",  "img": "feather",    "pos": "50% 22%", "t": "12:41", "lens": "85 mm", "note": "Cuff and hem, cropped" }
       ]
     },
     {
-      "n": "04", "slug": "rib", "title": "Rib", "mode": 3,
-      "base": [0.10, 0.26, 0.72], "spec": 0.3, "shin": 18, "relief": 0.30, "scale": 1.0,
-      "call": "13:30", "place": "Studio A, daylight", "garments": "Knit rib, cobalt",
+      "n": "04", "slug": "gilt", "title": "Gilt", "cover": { "img": "pearls", "pos": "50% 35%" },
+      "call": "13:30", "place": "Studio A, daylight", "garments": "Fringe, fur and metal",
       "lightNote": "Soft key, long shadow",
-      "blurb": "Cobalt rib knit in daylight. The surface is a thousand small ridges and the light has to be wide and low to find them.",
-      "brief": "Knitwear in one saturated colour. The danger is that knit photographs flat, so the key is soft and low enough to cast a long shadow off each rib. Afternoon after the room warms up.",
-      "alt": "cobalt blue ribbed knit",
+      "blurb": "Warm surfaces that hold light: gold fringe, fur, pearls, chrome. The job is to keep them from turning into glare.",
+      "brief": "Anything metallic or deeply textured either glows or blows out. The day was spent finding the soft, low key that lets fringe, fur and chrome keep their detail while still looking expensive.",
+      "alt": "gold, chrome and fur in warm light",
       "frames": [
-        { "l": "wide",   "ox": 0.0, "oy": 0.0, "rot": 0.0, "z": 1.0, "t": "13:41", "lens": "100 mm", "note": "Rib, straight on" },
-        { "l": "half-a", "ox": 2.6, "oy": 1.5, "rot": 0.3, "z": 0.8, "t": "14:05", "lens": "85 mm", "note": "Shoulder, stretched" },
-        { "l": "half-b", "ox": -3.0, "oy": 2.5, "rot": -0.5, "z": 1.1, "t": "14:15", "lens": "85 mm", "note": "Cuff, folded" },
-        { "l": "tall",   "ox": 4.0, "oy": -1.0, "rot": 0.1, "z": 1.2, "t": "14:40", "lens": "85 mm", "note": "Full length, daylight" },
-        { "l": "strip",  "ox": -1.2, "oy": 4.4, "rot": 1.57, "z": 0.9, "t": "15:02", "lens": "135 mm", "note": "Rib on its side" }
+        { "l": "tall",   "img": "metallic",   "pos": "50% 50%", "t": "13:44", "lens": "85 mm", "note": "Chrome, toned" },
+        { "l": "small",  "img": "fur",        "pos": "50% 50%", "t": "14:06", "lens": "100 mm", "note": "Fur and glasses, close" },
+        { "l": "wide",   "img": "pearls",     "pos": "50% 35%", "t": "14:30", "lens": "70 mm", "note": "Arms up, peach wall" },
+        { "l": "half-a", "img": "fringe",     "pos": "50% 50%", "t": "14:55", "lens": "85 mm", "note": "Fringe on a brass rail" },
+        { "l": "half-b", "img": "whitedance", "pos": "50% 50%", "t": "15:20", "lens": "85 mm", "note": "Amber, from behind" },
+        { "l": "strip",  "img": "metallic",   "pos": "50% 62%", "t": "15:41", "lens": "85 mm", "note": "Sheen, cropped" }
       ]
     },
     {
-      "n": "05", "slug": "crumple", "title": "Crumple", "mode": 4,
-      "base": [0.70, 0.73, 0.76], "spec": 1.7, "shin": 110, "relief": 0.42, "scale": 1.0,
-      "call": "16:10", "place": "Studio B, white", "garments": "Metallic foil, sculptural",
+      "n": "05", "slug": "stage", "title": "Stage", "cover": { "img": "runblack", "pos": "50% 50%" },
+      "call": "16:10", "place": "Studio B, runway", "garments": "Runway, sculptural",
       "lightNote": "Hard key, high angle",
-      "blurb": "Metallic foil crushed by hand and lit hard. Every facet throws the key somewhere else, so the picture changes with every inch the light moves.",
-      "brief": "The last setup of the day: foil, crushed and pinned, under a hard overhead key. It is the most violent picture in the set and the only one the light can turn from silver to black in one move.",
-      "alt": "crushed silver foil with hard facets",
+      "blurb": "The last setup of the day is the dark one: a runway, a single light, and clothes built to be seen from a distance.",
+      "brief": "Runway and show looks, shot the way the audience sees them: from far away, in the dark, with one light carrying the whole garment. Distance does the editing, and the frames stay loose.",
+      "alt": "runway and sculptural looks under a single light",
       "frames": [
-        { "l": "tall",   "ox": 0.0, "oy": 0.0, "rot": 0.0, "z": 1.0, "t": "16:22", "lens": "85 mm", "note": "Crush, first pass" },
-        { "l": "half-a", "ox": 3.1, "oy": 2.2, "rot": 0.6, "z": 0.8, "t": "16:45", "lens": "100 mm", "note": "Fold, hard key" },
-        { "l": "half-b", "ox": -2.5, "oy": 1.1, "rot": -0.8, "z": 1.3, "t": "16:55", "lens": "100 mm", "note": "Facet, close" },
-        { "l": "wide",   "ox": 5.2, "oy": -2.0, "rot": 0.2, "z": 1.0, "t": "17:30", "lens": "85 mm", "note": "Wrap, last frame of the day" }
+        { "l": "wide",   "img": "runblue",  "pos": "50% 50%", "t": "16:24", "lens": "200 mm", "note": "Long walk, blue" },
+        { "l": "tall",   "img": "runblack", "pos": "50% 50%", "t": "16:48", "lens": "135 mm", "note": "Black satin under red" },
+        { "l": "small",  "img": "ruffle",   "pos": "50% 50%", "t": "17:12", "lens": "85 mm", "note": "Sleeve volume" },
+        { "l": "half-a", "img": "pinkgown", "pos": "50% 50%", "t": "17:35", "lens": "85 mm", "note": "Sequins, backstage" },
+        { "l": "half-b", "img": "shimmer",  "pos": "50% 50%", "t": "17:58", "lens": "85 mm", "note": "Beads and mirror" }
       ]
     }
   ]

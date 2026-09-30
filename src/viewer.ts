@@ -1,9 +1,10 @@
 import data from './series.json';
-import { mountStudy, retarget } from './studies';
+import photos from './photos.json';
 import { mountPlot } from './plot';
 
 // Full-size viewer on a native <dialog>: the browser supplies the focus trap, Escape and inert background.
-const AR: Record<string, number> = { wide: 1.5, small: 1, tall: 0.8, strip: 2.6, 'half-a': 0.8, 'half-b': 0.8, full: 2.3 };
+type Photo = { w: number; h: number; alt: string };
+const P = photos as Record<string, Photo>;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -22,7 +23,7 @@ export function initViewer() {
       <button class="v-close" type="button">Close <span aria-hidden="true">Esc</span></button>
     </div>
     <div class="v-stage">
-      <div class="v-picture" data-stage><canvas class="v-canvas" aria-hidden="true"></canvas></div>
+      <div class="v-picture" data-stage><div class="ph v-fig"><img alt="" decoding="async"></div></div>
       <div class="plot plot-v" data-vplot></div>
     </div>
     <div class="v-bottom">
@@ -33,18 +34,19 @@ export function initViewer() {
   document.body.appendChild(dlg);
   mountPlot(dlg.querySelector<HTMLElement>('[data-vplot]')!);
 
-  const canvas = dlg.querySelector<HTMLCanvasElement>('.v-canvas')!;
+  const fig = dlg.querySelector<HTMLElement>('.v-fig')!;
+  const img = fig.querySelector('img')!;
   const stage = dlg.querySelector<HTMLElement>('[data-stage]')!;
   const num = dlg.querySelector('[data-v-num]')!;
   const note = dlg.querySelector('[data-v-note]')!;
   const live = dlg.querySelector('[data-v-live]')!;
-  mountStudy(canvas, si, 0);
 
   let i = 0;
   let from: HTMLElement | null = null;
 
   const fit = () => {
-    const ar = AR[s.frames[i].l] ?? 1.5;
+    const p = P[s.frames[i].img];
+    const ar = p.w / p.h;
     const b = stage.getBoundingClientRect();
     let w = b.width;
     let h = w / ar;
@@ -52,8 +54,8 @@ export function initViewer() {
       h = b.height;
       w = h * ar;
     }
-    canvas.style.width = `${Math.floor(w)}px`;
-    canvas.style.height = `${Math.floor(h)}px`;
+    fig.style.width = `${Math.floor(w)}px`;
+    fig.style.height = `${Math.floor(h)}px`;
   };
 
   const show = (n: number, dir = 0) => {
@@ -62,10 +64,14 @@ export function initViewer() {
     num.textContent = `${s.n}.${pad(i + 1)}`;
     note.textContent = `${f.note} · ${f.lens} · ${f.t}`;
     live.textContent = `Frame ${s.n}.${pad(i + 1)} of ${s.n}.${pad(s.frames.length)}: ${f.note}`;
+    const p = P[f.img];
+    img.src = `../../img/${f.img}-1800.webp`;
+    img.srcset = '';
+    img.alt = `${p.alt}, ${f.note.toLowerCase()}`;
+    img.style.objectPosition = '50% 50%';
     fit();
-    retarget(canvas, si, i);
     if (!reduce && dir) {
-      canvas.animate(
+      fig.animate(
         { clipPath: [dir > 0 ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)', 'inset(0 0 0 0)'] },
         { duration: 260, easing: 'cubic-bezier(.2,.7,.2,1)' }
       );

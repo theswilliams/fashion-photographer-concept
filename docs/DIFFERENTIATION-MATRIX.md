@@ -14,7 +14,7 @@ Living file for the five-site series. Each project adds a row; later projects mu
 | Signature interaction | Scroll-driven exploded teardown; click-to-mm grind dial; live configurator | Live dithered fire canvas tied to open/closed hours; reservation slip that fills as you book | Draggable lighting plot that relights the images live (WebGL); fullscreen viewer; call-sheet booking form | | |
 | Motion | One authored moment (teardown), hero settle on load; reduced-motion = static | Living fire, view-transitions between pages; reduced-motion = static | One authored moment (hero relight settle); reduced-motion = static | | |
 | Density | Medium-high: tables and dimensions, generous sheet padding | Low-medium: dark, quiet, generous space | Medium: image-dominant, sparse captions | | |
-| Imagery | None; authored SVG line drawing | None; inline SVG flat silhouettes + canvas fire | Code-authored WebGL cloth studies, labelled concept imagery (no rasters) | | |
+| Imagery | None; authored SVG line drawing | None; inline SVG flat silhouettes + canvas fire | Licensed Unsplash fashion photography as stand-ins, relit live by a CSS light overlay; credited | | |
 | Stack | Vite + vanilla TS | Vite + vanilla TS, multi-page static (4 real pages) | Vite + vanilla TS, multi-page static (8 pages, generated series pages) | | |
 | Repo | grist-hand-grinder | ninth-coal-restaurant | fashion-photographer | | |
 
