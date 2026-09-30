@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T00:00:00Z",
+  "title": "Design System: Marlowe Adeyemi-Voss",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Cool Paper", "canonical": "#eceeef", "tonalRamp": ["#0d0e10", "#3b4147", "#596067", "#8a9299", "#b4babf", "#d0d4d7", "#e0e3e5", "#eceeef"] },
+      "paper-2": { "role": "neutral", "displayName": "Paper Shade", "canonical": "#e0e3e5", "tonalRamp": ["#0d0e10", "#3b4147", "#596067", "#8a9299", "#b4babf", "#c8cdd0", "#e0e3e5", "#eceeef"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0d0e10", "tonalRamp": ["#0d0e10", "#1c1f22", "#2b2f33", "#3b4147", "#596067", "#7a8289", "#9aa1a7", "#c4c9cd"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#3b4147", "tonalRamp": ["#0d0e10", "#1f2327", "#2d3338", "#3b4147", "#4b5259", "#596067", "#7a8289", "#a3aaaf"] },
+      "ink-3": { "role": "neutral", "displayName": "Ink Quiet", "canonical": "#596067", "tonalRamp": ["#1c1f22", "#3b4147", "#4a5158", "#596067", "#6b737a", "#7e868d", "#9aa1a7", "#c4c9cd"] },
+      "highlighter": { "role": "primary", "displayName": "Highlighter Chartreuse", "canonical": "#d4f23a", "tonalRamp": ["#313b05", "#4d5b08", "#6b7d0c", "#8da312", "#adc623", "#d4f23a", "#e3f77c", "#f1fbbb"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero, series, about and booking headlines; weight 800, tight tracking." },
+      "numeral": { "displayName": "Numeral", "purpose": "Durable series numbers 01 to 05, tabular figures, largest type on the page." },
+      "headline": { "displayName": "Headline", "purpose": "Block titles and section headings." },
+      "body": { "displayName": "Body", "purpose": "Reading text and blurbs." },
+      "label": { "displayName": "Label", "purpose": "Stamped uppercase legends, field names, nav, table heads, form labels." }
+    },
+    "shadows": [
+      { "name": "focus-halo", "value": "outline: 3px solid #0d0e10; outline-offset: 2px; box-shadow: 0 0 0 6px #d4f23a", "purpose": "Keyboard focus only. The system has no other shadow." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.2, 0.7, 0.2, 1)", "purpose": "Viewer frame cut (260ms) and general easing." },
+      { "name": "button-invert", "value": "background 0.15s", "purpose": "Primary button hover inversion." },
+      { "name": "cell-fill", "value": "background 0.12s", "purpose": "Form cell focus fill." },
+      { "name": "reduced-motion", "value": "transition/animation none", "purpose": "All motion disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "mid", "value": "1100px" },
+      { "name": "phone", "value": "820px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Chartreuse fill under ink text; inverts on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Open the schedule <span aria-hidden=\"true\">&darr;</span></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; background: #d4f23a; color: #0d0e10; border: 1px solid #0d0e10; padding: 14px 20px; font-weight: 700; font-size: 1rem; text-decoration: none; border-radius: 0; transition: background 0.15s; } .ds-btn:hover { background: #0d0e10; color: #eceeef; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 3px solid #0d0e10; outline-offset: 2px; box-shadow: 0 0 0 6px #d4f23a; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Ruled label-caps control for close, step and menu.",
+      "html": "<button class=\"ds-ghost\">Close</button>",
+      "css": ".ds-ghost { background: none; color: #0d0e10; border: 1px solid #0d0e10; padding: 10px 14px; font: inherit; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 0; cursor: pointer; } .ds-ghost:hover { background: #d4f23a; } .ds-ghost:focus-visible { outline: 3px solid #0d0e10; outline-offset: 2px; box-shadow: 0 0 0 6px #d4f23a; }"
+    },
+    {
+      "name": "Top Bar Navigation",
+      "kind": "nav",
+      "description": "56px ruled bar: name, frame counter, three caps links; hover and current fill chartreuse.",
+      "html": "<div class=\"ds-bar\"><a class=\"ds-name\" href=\"#\">Marlowe Adeyemi-Voss</a><span class=\"ds-count\">Series 01 / 05</span><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Work</a><a href=\"#\">About</a><a href=\"#\">Book</a></nav></div>",
+      "css": ".ds-bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 56px; padding: 0 24px; background: #eceeef; border-bottom: 1px solid #0d0e10; color: #0d0e10; } .ds-name { font-weight: 800; letter-spacing: -0.01em; text-decoration: none; color: inherit; } .ds-count { justify-self: center; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-nav { justify-self: end; display: flex; gap: 28px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-nav a { color: inherit; text-decoration: none; padding: 6px 4px; } .ds-nav a:hover, .ds-nav a[aria-current] { background: #d4f23a; }"
+    },
+    {
+      "name": "Form Cell",
+      "kind": "input",
+      "refersTo": "chip",
+      "description": "Call-sheet field: stamped label, underline input, whole cell fills chartreuse on focus.",
+      "html": "<div class=\"ds-cell\"><label for=\"ds-n\">Production</label><input id=\"ds-n\" type=\"text\" value=\"Spring lookbook\"></div>",
+      "css": ".ds-cell { padding: 10px 14px 12px; border: 1px solid #0d0e10; background: #eceeef; transition: background 0.12s; } .ds-cell:focus-within { background: #d4f23a; } .ds-cell label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; color: #0d0e10; } .ds-cell input { width: 100%; font: inherit; font-size: 1.0625rem; color: #0d0e10; background: transparent; border: 0; border-bottom: 1px solid #596067; border-radius: 0; padding: 6px 0; outline: none; }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip-selected",
+      "description": "Ruled toggle; selected is chartreuse with an inset ink outline.",
+      "html": "<span class=\"ds-chip\">Editorial</span> <span class=\"ds-chip is-on\">Campaign</span>",
+      "css": ".ds-chip { display: inline-block; padding: 8px 14px; border: 1px solid #0d0e10; font-weight: 600; font-size: 0.9375rem; background: #eceeef; color: #0d0e10; } .ds-chip.is-on { background: #d4f23a; outline: 3px solid #0d0e10; outline-offset: -3px; }"
+    },
+    {
+      "name": "Field Block",
+      "kind": "custom",
+      "description": "Call-sheet data rows: ink top rule, hairline rows, caps label column.",
+      "html": "<dl class=\"ds-fields\"><div><dt>Call</dt><dd>06:40</dd></div><div><dt>Location</dt><dd>Studio A, north window</dd></div></dl>",
+      "css": ".ds-fields { margin: 0; border-top: 1px solid #0d0e10; color: #0d0e10; } .ds-fields > div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgb(13 14 16 / 0.28); } .ds-fields dt { color: #596067; padding-top: 0.22em; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-fields dd { margin: 0; font-size: 0.9375rem; }"
+    },
+    {
+      "name": "Lighting Plot",
+      "kind": "custom",
+      "description": "Top-down ruled panel with a draggable square key-light handle that relights the canvas studies.",
+      "html": "<div class=\"ds-plot\"><div class=\"ds-plot-head\"><span>Key</span><span>Plot</span></div><div class=\"ds-plot-pad\"><svg viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\"><circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"none\" stroke=\"#0d0e10\" stroke-width=\"0.8\"/><circle cx=\"50\" cy=\"50\" r=\"8\" fill=\"#e0e3e5\" stroke=\"#0d0e10\"/><line x1=\"50\" y1=\"50\" x2=\"78\" y2=\"26\" stroke=\"#0d0e10\" stroke-dasharray=\"4 3\"/></svg><span class=\"ds-handle\" style=\"left:78%;top:26%\"></span></div></div>",
+      "css": ".ds-plot { width: 240px; background: #eceeef; border: 1px solid #0d0e10; color: #0d0e10; } .ds-plot-head { display: flex; justify-content: space-between; padding: 8px 10px; border-bottom: 1px solid #0d0e10; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-plot-pad { position: relative; aspect-ratio: 1; margin: 10px; } .ds-handle { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; background: #d4f23a; border: 2px solid #0d0e10; display: grid; place-items: center; cursor: grab; } .ds-handle::after { content: ''; width: 6px; height: 6px; background: #0d0e10; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Call Sheet",
+    "overview": "The interface is the paperwork of a shoot day: call times, slate numbers, a lighting plot, a shot log. It is a cool paper sheet ruled in ink, and the pictures are laid over it at frame scale. The pictures are code-authored WebGL studies of cloth (satin, pleat, tulle, rib, foil) that relight live when the key-light handle on the plot moves. They are labelled as concept imagery.\n\nThe system is severe and quiet. Structure comes from 1px ink rules, registration crosses, fold ticks and stamped uppercase field labels, never from cards, radii or shadows. Images set the layout by bleeding off the page edge, stepping across the 12-column grid and overlapping, so each of the five series blocks on the home page has its own composition. One highlighter colour is the only heat in the sheet.",
+    "keyCharacteristics": [
+      "Cool paper, ink and one chartreuse highlighter used as a fill under black text.",
+      "Schibsted Grotesk only. Rank is carried by weight and case, not by a wide size range.",
+      "Every series and frame keeps a durable two-digit number; numerals are the largest type on the page.",
+      "Zero radius and zero shadow everywhere; depth is overlap and ruled edges.",
+      "Asymmetric 38 / 62 split as the recurring page grammar."
+    ],
+    "rules": [
+      { "name": "The Fill-Only Rule", "body": "Chartreuse is a background under black text, never a foreground. Its meaning is \"this is yours to act on\" or \"this is active\".", "section": "colors" },
+      { "name": "The Ink Rule", "body": "Structure is 1px solid ink (--rule) for major divisions and ink at 28% alpha (--hair) for row dividers. No other line colors.", "section": "colors" },
+      { "name": "The Not-By-Colour Rule", "body": "State is never colour alone: errors add a thick ink underline and a \"Fix:\" prefix, selected chips add an inset ink outline, current nav is also filled and marked with aria-current.", "section": "colors" },
+      { "name": "The Rank-By-Weight Rule", "body": "Hierarchy comes from weight (400, 600, 700, 800) and case, not from many sizes. Add a new size only for numerals and display.", "section": "typography" },
+      { "name": "The Tabular Rule", "body": "tabular-nums only on counters, table cells, plot readouts, numerals and refs, where figures must align.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Surfaces are flat ink-on-paper. Hierarchy is made with rules, scale and overlap.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep chartreuse (#d4f23a) as a fill under ink text only, for action, \"your call\" and active state.",
+      "Do build structure from 1px solid ink rules and 28%-ink hairlines; register crosses and fold ticks are the ornaments.",
+      "Do give every series and frame a fixed two-digit number and show it at display scale.",
+      "Do keep all corners at 0px and all surfaces shadow-free.",
+      "Do rank by weight and case in Schibsted Grotesk; use tabular-nums only where figures align.",
+      "Do vary each new image block's composition (bleed, step, overlap) rather than repeating one row.",
+      "Do label generated imagery as concept imagery and keep canvas studies relit by the plot.",
+      "Do keep the focus halo: 3px ink outline, 2px offset, plus a 6px chartreuse ring."
+    ],
+    "donts": [
+      "Don't use chartreuse as text, border or icon color.",
+      "Don't use card grids, rounded thumbnails, hover overlays or a dark gallery ground.",
+      "Don't add radii, drop shadows or gradients as decoration.",
+      "Don't add a second typeface or a wide size ramp to express rank.",
+      "Don't carry state by colour alone."
+    ]
+  }
+}

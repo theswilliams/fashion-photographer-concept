@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ECEEEF" />
+  <meta name="description" content="Book Marlowe Adeyemi-Voss, a fictional fashion photographer, with a call sheet form. Concept only: nothing is sent." />
+  <title>Book a call — Marlowe Adeyemi-Voss</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body data-page="book" data-count-init="Page 03 / 03">
+<!--@nav-->
+<main id="main" class="book">
+  <div class="book-intro">
+    <h1>File a call.</h1>
+    <p>Fill in the sheet. It works like a real booking form, but this is a concept: nothing you type leaves your browser.</p>
+  </div>
+
+  <div>
+    <form id="sheet" novalidate class="reg" aria-label="Booking call sheet">
+      <div class="sheet-head leg"><span>Call sheet</span><span>Concept, not sent</span></div>
+      <div class="sheet-grid">
+        <div class="cell">
+          <label for="f-production">Production or brand</label>
+          <input id="f-production" name="production" type="text" autocomplete="organization" aria-describedby="err-production" aria-invalid="false" />
+          <p class="err" id="err-production" aria-live="polite"></p>
+        </div>
+        <div class="cell">
+          <label for="f-contact">Contact</label>
+          <input id="f-contact" name="contact" type="text" autocomplete="name" aria-describedby="err-contact" aria-invalid="false" />
+          <p class="err" id="err-contact" aria-live="polite"></p>
+        </div>
+        <div class="cell">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="err-email" aria-invalid="false" />
+          <p class="err" id="err-email" aria-live="polite"></p>
+        </div>
+        <div class="cell">
+          <label for="f-date">Shoot window</label>
+          <input id="f-date" name="date" type="date" />
+          <p class="err"></p>
+        </div>
+        <fieldset class="cell wide">
+          <legend>Shoot type</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="type" value="campaign" checked /><span>Campaign</span></label>
+            <label class="chip"><input type="radio" name="type" value="lookbook" /><span>Lookbook</span></label>
+            <label class="chip"><input type="radio" name="type" value="editorial" /><span>Editorial</span></label>
+            <label class="chip"><input type="radio" name="type" value="product" /><span>Product</span></label>
+          </div>
+        </fieldset>
+        <div class="cell wide">
+          <label for="f-budget">Budget band</label>
+          <select id="f-budget" name="budget">
+            <option>Under 5,000</option>
+            <option>5,000 to 15,000</option>
+            <option>15,000 to 40,000</option>
+            <option>40,000 and up</option>
+          </select>
+        </div>
+        <div class="cell wide">
+          <label for="f-brief">Brief</label>
+          <textarea id="f-brief" name="brief" aria-describedby="err-brief" aria-invalid="false"></textarea>
+          <p class="err" id="err-brief" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="sheet-foot">
+        <button class="btn" type="submit">Issue call sheet <span aria-hidden="true">→</span></button>
+        <p class="summary" data-summary role="status"></p>
+      </div>
+    </form>
+
+    <div id="issued" class="reg" tabindex="-1" hidden>
+      <h2>Call sheet issued.</h2>
+      <p>Reference <span class="ref" data-ref>CS-0000</span> for <b data-who></b>.</p>
+      <p class="fine">This is a fictional concept site. Nothing was sent, and nothing was stored. In production this is where the studio would confirm the date by email.</p>
+      <button type="button" data-edit>Edit the sheet</button>
+    </div>
+  </div>
+</main>
+<!--@foot-->
+</body>
+</html>

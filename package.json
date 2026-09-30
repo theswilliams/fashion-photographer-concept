@@ -1,0 +1,19 @@
+{
+  "name": "marlowe-adeyemi-voss",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "gen": "node scripts/gen-series.mjs",
+    "dev": "npm run gen && vite",
+    "build": "npm run gen && tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@fontsource-variable/schibsted-grotesk": "^5.3.0"
+  }
+}
